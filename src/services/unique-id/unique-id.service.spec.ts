@@ -36,10 +36,21 @@ describe(UniqueIdService.name, () => {
     expect(ids.size).toBe(50);
   });
 
-  it(`#${UniqueIdService.prototype.getNumberOfGeneratedIds.name} 
+  it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name} 
     should return the number of generatedIds when called`, () => {
     service.generateUniqueIdWithPrefix('app');
     service.generateUniqueIdWithPrefix('app');
     expect(service.getNumberOfGeneratedIds()).toBe(2);
-  })
+  });
+
+  it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name}
+    should throw when called with empty`, () => {
+      // expect(() => service.generateUniqueIdWithPrefix(null)).toThrow();
+      // expect(() => service.generateUniqueIdWithPrefix(undefined)).toThrow();
+      // expect(() => service.generateUniqueIdWithPrefix('')).toThrow();
+      const emptyValues = [null, undefined, ''];
+      emptyValues.forEach(emptyValeu => {
+        expect(() => service.generateUniqueIdWithPrefix(emptyValeu)).toThrow();
+      });
+    });
 });
