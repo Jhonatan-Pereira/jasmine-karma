@@ -45,10 +45,7 @@ describe(UniqueIdService.name, () => {
 
   it(`#${UniqueIdService.prototype.generateUniqueIdWithPrefix.name}
     should throw when called with empty`, () => {
-      // expect(() => service.generateUniqueIdWithPrefix(null)).toThrow();
-      // expect(() => service.generateUniqueIdWithPrefix(undefined)).toThrow();
-      // expect(() => service.generateUniqueIdWithPrefix('')).toThrow();
-      const emptyValues = [null, undefined, ''];
+      const emptyValues = [null, undefined, '', '0', '1'];
       emptyValues.forEach(emptyValeu => {
         expect(() => service.generateUniqueIdWithPrefix(emptyValeu)).toThrow();
       });
