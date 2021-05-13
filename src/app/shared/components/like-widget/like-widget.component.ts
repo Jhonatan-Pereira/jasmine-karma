@@ -1,5 +1,4 @@
-import { EventEmitter, Input, OnInit } from "@angular/core";
-import { Component, Output } from "@angular/core";
+import { EventEmitter, Input, OnInit, Component, Output } from "@angular/core";
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { UniqueIdService } from "../../services/unique-id/unique-id.service";
 
