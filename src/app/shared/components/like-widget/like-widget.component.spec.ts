@@ -31,4 +31,14 @@ describe(LikeWidgetComponent.name, () => {
     fixture.detectChanges();
     expect(component.id).toBe(someID);
   });
+
+  it(`#${LikeWidgetComponent.prototype.like.name}
+    Should trigger emission then called`, done => {
+      fixture.detectChanges();
+      component.liked.subscribe(() => {
+        expect(true).toBeTrue();
+        done();
+      });
+      component.like();
+    });
 });
