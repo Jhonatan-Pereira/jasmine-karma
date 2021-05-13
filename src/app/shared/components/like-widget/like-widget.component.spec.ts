@@ -4,6 +4,7 @@ import { LikeWidgetModule } from "./like-widget.module";
 
 describe(LikeWidgetComponent.name, () => {
   let fixture: ComponentFixture<LikeWidgetComponent> = null;
+  let component: LikeWidgetComponent = null;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -11,25 +12,23 @@ describe(LikeWidgetComponent.name, () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(LikeWidgetComponent);
+    component = fixture.componentInstance;
   });
 
   it('Should create component', () => {
-    const componente = fixture.componentInstance;
-    expect(componente).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   
   it('Should auto generate ID when id input property is missing', () => {
-    const componente = fixture.componentInstance;
     fixture.detectChanges();
-    expect(componente.id).toBeTruthy();
+    expect(component.id).toBeTruthy();
   });
 
   it('Should NOT generate ID when id input property is present', () => {
-    const componente = fixture.componentInstance;
     const someID = 'someId';
-    componente.id = someID;
+    component.id = someID;
     fixture.detectChanges();
-    expect(componente.id).toBe(someID);
+    expect(component.id).toBe(someID);
   });
 });
