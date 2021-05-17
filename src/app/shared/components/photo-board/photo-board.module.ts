@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { PhotoFrameComponent } from "../photo-frame/photo-frame.component";
 import { PhotoFrameModule } from "../photo-frame/photo-frame.module";
 import { PhotoBoardComponent } from "./photo-board.component";
+import { PhotoBoardService } from "./services/photo-board.service";
 
 @NgModule({
   declarations: [PhotoBoardComponent],
@@ -10,6 +10,7 @@ import { PhotoBoardComponent } from "./photo-board.component";
     CommonModule,
     PhotoFrameModule
   ],
-  exports: [PhotoBoardComponent]
+  exports: [PhotoBoardComponent],
+  providers: [PhotoBoardService]
 })
 export class PhotoBoardModule {}
