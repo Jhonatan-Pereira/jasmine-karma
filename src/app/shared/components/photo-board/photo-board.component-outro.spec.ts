@@ -3,8 +3,9 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { Photo } from "./interfaces/photo";
 import { PhotoBoardComponent } from "./photo-board.component";
 import { PhotoBoardModule } from "./photo-board.module";
+import { buildPhotoList } from "./test/build-photos-list";
 
-describe(PhotoBoardComponent.name, () => {
+describe(PhotoBoardComponent.name + ' outro', () => {
 
   let fixture: ComponentFixture<PhotoBoardTestComponent>;
   let component: PhotoBoardTestComponent;
@@ -32,19 +33,6 @@ describe(PhotoBoardComponent.name, () => {
   });
 
 });
-
-function buildPhotoList(): Photo[] {
-  const photos: Photo[] = [];
-  for(let i = 0; i < 8; i++) {
-    photos.push({
-      id: i+1,
-      url: '',
-      description: ''
-    });
-  }
-
-  return photos;
-}
 
 @Component({
   template: `
